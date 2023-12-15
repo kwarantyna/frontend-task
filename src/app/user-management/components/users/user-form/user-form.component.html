@@ -1,0 +1,79 @@
+<div class="form-container">
+  <form [formGroup]="form" class="form" (ngSubmit)="saveUser()">
+    <mat-form-field appearance="outline">
+      <mat-label>Unikalny identyfikator użytkownika (ID)</mat-label>
+      <input
+        matInput
+        formControlName="id"
+        placeholder="123456"
+        min="0"
+        type="number"
+      />
+    </mat-form-field>
+    <div *ngIf="id.invalid && (id.dirty || id.touched)">
+      <mat-error *ngIf="id.hasError('required')">
+        ID użytkownika jest obowiązkowe
+      </mat-error>
+      <mat-error *ngIf="id.hasError('pattern')">
+        ID musi być liczbą dodatnią i całkowitą.
+      </mat-error>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Imię użytkownika</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="firstName"
+        placeholder="Adam"
+        maxlength="50"
+      />
+    </mat-form-field>
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+      <mat-error *ngIf="firstName.hasError('required')">
+        Imię użytkownika jest obowiązkowe
+      </mat-error>
+      <mat-error *ngIf="firstName.hasError('maxlength')">
+        Imię użytkownika nie może być dłuższe niż 50 znaków.
+      </mat-error>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nazwisko użytkownika</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="lastName"
+        placeholder="Kowalski"
+        maxlength="50"
+      />
+    </mat-form-field>
+    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+      <mat-error *ngIf="firstName.hasError('maxlength')">
+        Nazwisko użytkownika nie może być dłuższe niż 50 znaków.
+      </mat-error>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Rola użytkownika</mat-label>
+      <mat-select formControlName="role">
+        <mat-option *ngFor="let role of roleEnum" [value]="role">
+          {{ roleEnumLabel[role] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="role.invalid && (role.dirty || role.touched)">
+      <mat-error *ngIf="role.hasError('required')">
+        Rola użytkownika jest obowiązkowa
+      </mat-error>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!editMode ? form.invalid : !form.dirty || form.invalid"
+    >
+      {{ buttonLabel }}
+    </button>
+  </form>
+</div>
