@@ -1,0 +1,36 @@
+.filter {
+  flex: 1.5 1 auto;
+}
+
+input {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  height: 35px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input,
+input::placeholder {
+  color: var(--color-primary500);
+}
+
+@media (min-width: 1280px) {
+  .filter {
+    flex: 1.5 1 auto;
+  }
+}
+
+@media (max-width: 1280px) {
+  .filter,
+  .filter-select,
+  .btn-filter {
+    width: 100%;
+  }
+}

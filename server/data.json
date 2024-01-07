@@ -1,254 +1,310 @@
 {
+  "profile": {
+    "name": "Jan Kowalski",
+    "email": "jan.kowalski@gpw.pl",
+    "imageUrl": "/assets/images/avatar.jpg"
+  },
   "users": [
     {
       "id": 982374,
       "fullName": "John Doe",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 456789,
       "fullName": "Jane Smith",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 123456,
       "fullName": "Bob Johnson",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 789012,
       "fullName": "Alice Williams",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 987654,
       "fullName": "Charlie Brown",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 654321,
       "fullName": "Eva Davis",
-      "role": "admin"
+      "role": "admin",
+      "status": "inactive"
     },
     {
       "id": 876543,
       "fullName": "Michael White",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 543210,
       "fullName": "Sophia Johnson",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 135792,
       "fullName": "David Lee",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 246801,
       "fullName": "Megan Taylor",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 112233,
       "fullName": "Ryan Anderson",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 445566,
       "fullName": "Emma Wilson",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 778899,
       "fullName": "Daniel Harris",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 998877,
       "fullName": "Olivia Martinez",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 334455,
       "fullName": "William Turner",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 667788,
       "fullName": "Ava Smith",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 112233,
       "fullName": "James Johnson",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 445566,
       "fullName": "Sophie Davis",
-      "role": "admin"
+      "role": "admin",
+      "status": "inactive"
     },
     {
       "id": 778899,
       "fullName": "Matthew Wilson",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 998877,
       "fullName": "Emily Brown",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 334455,
       "fullName": "Christopher Taylor",
-      "role": "admin"
+      "role": "admin",
+      "status": "inactive"
     },
     {
       "id": 667788,
       "fullName": "Grace Harris",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 112233,
       "fullName": "Daniel Anderson",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 445566,
       "fullName": "Ella Wilson",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 778899,
       "fullName": "Liam Turner",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 998877,
       "fullName": "Chloe Smith",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 334455,
       "fullName": "Andrew Johnson",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 667788,
       "fullName": "Avery Davis",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 112233,
       "fullName": "Sophia Harris",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 445566,
       "fullName": "Benjamin Wilson",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 778899,
       "fullName": "Lily Turner",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 998877,
       "fullName": "Carter Brown",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 334455,
       "fullName": "Zoe Smith",
-      "role": "admin"
+      "role": "admin",
+      "status": "inactive"
     },
     {
       "id": 667788,
       "fullName": "Mason Johnson",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 112233,
       "fullName": "Abigail Davis",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 445566,
       "fullName": "Owen Harris",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 778899,
       "fullName": "Aria Wilson",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 998877,
       "fullName": "Ethan Turner",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 334455,
       "fullName": "Madison Brown",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 667788,
       "fullName": "Logan Smith",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 112233,
       "fullName": "Isabella Johnson",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 445566,
       "fullName": "Jackson Davis",
-      "role": "admin"
+      "role": "admin",
+      "status": "inactive"
     },
     {
       "id": 778899,
       "fullName": "Grace Harris",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 998877,
       "fullName": "Nathan Wilson",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     },
     {
       "id": 334455,
       "fullName": "Sofia Turner",
-      "role": "admin"
+      "role": "admin",
+      "status": "inactive"
     },
     {
       "id": 667788,
       "fullName": "Caleb Brown",
-      "role": "operator"
+      "role": "operator",
+      "status": "inactive"
     },
     {
       "id": 112233,
       "fullName": "Eleanor Smith",
-      "role": "user"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 445566,
       "fullName": "Aiden Johnson",
-      "role": "admin"
+      "role": "admin",
+      "status": "active"
     },
     {
       "id": 778899,
       "fullName": "Addison Davis",
-      "role": "operator"
+      "role": "operator",
+      "status": "active"
     },
     {
       "id": 998877,
       "fullName": "Elijah Harris",
-      "role": "user"
+      "role": "user",
+      "status": "inactive"
     }
   ]
 }
+

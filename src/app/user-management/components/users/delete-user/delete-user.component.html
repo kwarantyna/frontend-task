@@ -1,15 +1,20 @@
-<h1 mat-dialog-title>Usuwanie użytkownika</h1>
+<h1 mat-dialog-title>{{ "Users.DeleteUser.Title" | translate }}</h1>
 <div mat-dialog-content class="dialog-content">
-  <p>Czy na pewno chcesz usunąć użytkownika o nazwie {{ user.fullName }}?</p>
+  <p>
+    {{ "Users.DeleteUser.Description" | translate : param }}
+  </p>
   <div mat-dialog-actions align="center">
     <button
-      mat-raised-button
+      mat-button
       (click)="deleteUser()"
       cdkFocusInitial
-      color="warn"
+      class="btn-delete uppercase"
     >
-      Usuń
+      {{ "Users.DeleteUser.SubmitButton" | translate }}
     </button>
-    <button mat-raised-button mat-dialog-close>Anuluj</button>
+    <button mat-button mat-dialog-close class="uppercase">
+      {{ "Users.DeleteUser.CancelButton" | translate }}
+    </button>
   </div>
 </div>
+

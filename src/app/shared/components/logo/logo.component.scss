@@ -1,0 +1,45 @@
+.logo-icon--base {
+  position: relative;
+  width: 10px;
+  height: 11px;
+  background-color: #61a217;
+
+  &.upper-row {
+    border-bottom-right-radius: 6px;
+  }
+
+  &.upper-row:before {
+    position: absolute;
+    content: "";
+    left: 10px;
+    margin-left: 2px;
+    width: 10px;
+    height: 11px;
+    background-color: #9aaf02;
+    border-bottom-left-radius: 6px;
+  }
+
+  &.lower-row {
+    border-top-right-radius: 6px;
+    margin-top: 2px;
+    background-color: #bb3806;
+  }
+
+  &.lower-row:before {
+    position: absolute;
+    content: "";
+    left: 10px;
+    margin-left: 2px;
+    width: 10px;
+    height: 11px;
+    background-color: #1799a2;
+    border-top-left-radius: 6px;
+  }
+}
+
+.logo-icon-text {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  left: 12px;
+  color: #fff;
+}

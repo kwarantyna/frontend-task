@@ -1,0 +1,36 @@
+<div
+  class="header flex items-center mx-9"
+  [ngClass]="!isSidenavOpen ? 'justify-between' : 'justify-end'"
+>
+  <div *ngIf="!isSidenavOpen" class="menu">
+    <img
+      width="32"
+      height="32"
+      src="/assets/icons/menu.svg"
+      (click)="emitMenuClicked()"
+    />
+  </div>
+
+  <div class="flex">
+    <img
+      src="/assets/icons/{{ languageFlag }}"
+      class="w-7 mr-7"
+      (click)="changeLanguage()"
+    />
+
+    <div class="header__divider mr-9"></div>
+
+    <div class="mt-1.5">
+      <a [routerLink]="['/']">
+        <img src="/assets/icons/home.svg" class="w-7 mr-6" />
+      </a>
+      <a>
+        <img
+          src="/assets/icons/settings.svg"
+          class="w-7 header__language-flag"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+

@@ -1,7 +1,13 @@
-<div class="form-container">
-  <form [formGroup]="form" class="form" (ngSubmit)="saveUser()">
+<div class="form-container mt-11">
+  <form
+    [formGroup]="form"
+    class="form xl:w-6/12 w-8/12"
+    (ngSubmit)="saveUser()"
+  >
     <mat-form-field appearance="outline">
-      <mat-label>Unikalny identyfikator użytkownika (ID)</mat-label>
+      <mat-label>
+        {{ "Users.UserForm.ID" | translate }}
+      </mat-label>
       <input
         matInput
         formControlName="id"
@@ -9,18 +15,24 @@
         min="0"
         type="number"
       />
+      <mat-error
+        *ngIf="
+          id.invalid && (id.dirty || id.touched) && id.hasError('required')
+        "
+      >
+        {{ "Users.UserForm.Validation.ID.Required" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="id.invalid && (id.dirty || id.touched) && id.hasError('pattern')"
+      >
+        {{ "Users.UserForm.Validation.ID.Pattern" | translate }}
+      </mat-error>
     </mat-form-field>
-    <div *ngIf="id.invalid && (id.dirty || id.touched)">
-      <mat-error *ngIf="id.hasError('required')">
-        ID użytkownika jest obowiązkowe
-      </mat-error>
-      <mat-error *ngIf="id.hasError('pattern')">
-        ID musi być liczbą dodatnią i całkowitą.
-      </mat-error>
-    </div>
 
     <mat-form-field appearance="outline">
-      <mat-label>Imię użytkownika</mat-label>
+      <mat-label>
+        {{ "Users.UserForm.FirstName" | translate }}
+      </mat-label>
       <input
         matInput
         type="text"
@@ -28,18 +40,30 @@
         placeholder="Adam"
         maxlength="50"
       />
+      <mat-error
+        *ngIf="
+          firstName.invalid &&
+          (firstName.dirty || firstName.touched) &&
+          firstName.hasError('required')
+        "
+      >
+        {{ "Users.UserForm.Validation.FirstName.Required" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          firstName.invalid &&
+          (firstName.dirty || firstName.touched) &&
+          firstName.hasError('maxlength')
+        "
+      >
+        {{ "Users.UserForm.Validation.FirstName.MaxLength" | translate }}
+      </mat-error>
     </mat-form-field>
-    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-      <mat-error *ngIf="firstName.hasError('required')">
-        Imię użytkownika jest obowiązkowe
-      </mat-error>
-      <mat-error *ngIf="firstName.hasError('maxlength')">
-        Imię użytkownika nie może być dłuższe niż 50 znaków.
-      </mat-error>
-    </div>
 
     <mat-form-field appearance="outline">
-      <mat-label>Nazwisko użytkownika</mat-label>
+      <mat-label>
+        {{ "Users.UserForm.LastName" | translate }}
+      </mat-label>
       <input
         matInput
         type="text"
@@ -47,33 +71,65 @@
         placeholder="Kowalski"
         maxlength="50"
       />
-    </mat-form-field>
-    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-      <mat-error *ngIf="firstName.hasError('maxlength')">
-        Nazwisko użytkownika nie może być dłuższe niż 50 znaków.
+      <mat-error
+        *ngIf="
+          lastName.invalid &&
+          (lastName.dirty || lastName.touched) &&
+          firstName.hasError('maxlength')
+        "
+      >
+        {{ "Users.UserForm.Validation.LastName.MaxLength" | translate }}
       </mat-error>
-    </div>
+    </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Rola użytkownika</mat-label>
+      <mat-label>
+        {{ "Users.UserForm.Role" | translate }}
+      </mat-label>
       <mat-select formControlName="role">
         <mat-option *ngFor="let role of roleEnum" [value]="role">
-          {{ roleEnumLabel[role] }}
+          {{ "Users.UserRoleEnum." + role | translate }}
         </mat-option>
       </mat-select>
-    </mat-form-field>
-    <div *ngIf="role.invalid && (role.dirty || role.touched)">
-      <mat-error *ngIf="role.hasError('required')">
-        Rola użytkownika jest obowiązkowa
+      <mat-error
+        *ngIf="
+          role.invalid &&
+          (role.dirty || role.touched) &&
+          role.hasError('required')
+        "
+      >
+        {{ "Users.UserForm.Validation.Role.Required" | translate }}
       </mat-error>
-    </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>
+        {{ "Users.UserForm.Status" | translate }}
+      </mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let status of statusEnum" [value]="status">
+          {{ "Users.UserStatusEnum." + status | translate }}
+        </mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="
+          role.invalid &&
+          (role.dirty || role.touched) &&
+          role.hasError('required')
+        "
+      >
+        {{ "Users.UserForm.Validation.Role.Required" | translate }}
+      </mat-error>
+    </mat-form-field>
+
     <button
-      mat-raised-button
-      color="primary"
+      mat-button
+      class="btn-submit uppercase"
       type="submit"
       [disabled]="!editMode ? form.invalid : !form.dirty || form.invalid"
     >
-      {{ buttonLabel }}
+      {{ "Users.UserForm.SubmitButton." + buttonLabel | translate }}
     </button>
   </form>
 </div>
+

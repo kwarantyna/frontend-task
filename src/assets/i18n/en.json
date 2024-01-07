@@ -1,0 +1,102 @@
+{
+  "Menu": {
+    "Item": {
+      "Header": "Administration panel",
+      "Users": "Users",
+      "AddNewUser": "Add new user"
+    },
+    "ContentHeader": {
+      "Users": "User list",
+      "AddUser": "Add new user",
+      "EditUser": "Edit user"
+    }
+  },
+  "Users": {
+    "UserForm": {
+      "ID": "Unique user identifier (ID)",
+      "FirstName": "User first name",
+      "LastName": "User last name",
+      "Role": "User role",
+      "Status": "User status",
+
+      "AddUser": {
+        "SuccessMessage": "User {{name}} added successfully",
+        "ErrorMessage": "Adding user failed!"
+      },
+      "EditUser": {
+        "SuccessMessage": "User with ID: {{id}} successfully edited",
+        "ErrorMessage": "Editing user failed!"
+      },
+
+      "Validation": {
+        "ID": {
+          "Required": "User ID is mandatory",
+          "Pattern": "ID must be a positive and integer"
+        },
+        "FirstName": {
+          "Required": "The user first name is mandatory",
+          "MaxLength": "The user first name cannot be longer than 50 characters"
+        },
+        "LastName": {
+          "MaxLength": "The user last name cannot be longer than 50 characters"
+        },
+        "Role": {
+          "Required": "The user role is mandatory"
+        }
+      },
+      "SubmitButton": {
+        "AddUser": "Add user",
+        "EditUser": "Edit user"
+      }
+    },
+    "DeleteUser": {
+      "Title": "Deleting a user",
+      "Description": "Are you sure you want to delete the user {{name}}?",
+      "SubmitButton": "Delete",
+      "CancelButton": "Cancel",
+      "SuccessMessage": "User {{name}} successfully deleted",
+      "ErrorMessage": "Deleting user failed!"
+    },
+    "UserListFilter": {
+      "Placeholder": "Enter a name or key...",
+      "AllRoles": "Role: All",
+      "Role": "Role:",
+      "SubmitButton": "Search for a user",
+      "Results": "Results: {{results}}"
+    },
+    "UserList": {
+      "Filter": {},
+      "Columns": {
+        "No": "No.",
+        "Id": "Id",
+        "FullName": "First and last name",
+        "Role": "Role",
+        "Status": "Status",
+        "Actions": "Actions"
+      },
+      "ActionButtons": {
+        "Edit": "Edit",
+        "Delete": "Delete"
+      }
+    },
+    "UserRoleEnum": {
+      "admin": "Admin",
+      "user": "User",
+      "operator": "Operator"
+    },
+    "UserStatusEnum": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "MessageActionButton": "Ok!"
+  },
+  "Paginator": {
+    "RangeFromZero": "0 of {{length}}",
+    "Range": "{{startIndex}} - {{endIndex}} of {{length}}",
+    "ItemsPerPageLabel": "Items per page",
+    "NextPageLabel": "Next page",
+    "PreviousPageLabel": "Previous page",
+    "FirstPageLabel": "First page",
+    "LastPageLabel": "Last page"
+  }
+}

@@ -1,0 +1,38 @@
+<mat-sidenav-container
+  class="container"
+  autosize
+  (backdropClick)="sidenavOpen = false"
+>
+  <mat-sidenav
+    #sidenav
+    class="sidenav"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="!isMobile"
+  >
+    <app-sidenav-header (onMenuClicked)="toggleMenu()"></app-sidenav-header>
+
+    <div class="sidenav__label-panel pl-6 uppercase text-xs font-bold pb-5">
+      {{ "Menu.Item.Header" | translate }}
+    </div>
+    <div class="pr-3.5">
+      <app-sidenav></app-sidenav>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="w-full">
+    <app-header
+      (onMenuClicked)="toggleMenu()"
+      [isSidenavOpen]="sidenavOpen"
+    ></app-header>
+
+    <div class="content-container">
+      <div class="content-header text-2xl text-white xl:pb-11 pb-8 pt-6 pl-4">
+        {{ "Menu.ContentHeader." + header | translate }}
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

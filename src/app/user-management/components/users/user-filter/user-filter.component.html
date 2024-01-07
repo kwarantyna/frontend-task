@@ -1,0 +1,44 @@
+<div class="xl:ml-16">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="emitFilters()"
+    class="xl:flex max-w-5xl m-auto xl:m-0 xl:w-full md:w-9/12"
+  >
+    <div appearance="fill" class="filter mr-3">
+      <input
+        formControlName="idName"
+        matInput
+        [placeholder]="'Users.UserListFilter.Placeholder' | translate"
+        #input
+      />
+    </div>
+
+    <mat-form-field class="filter-select mr-3 xl:flex-1 xl:mt-0 mt-3">
+      <mat-select
+        formControlName="role"
+        multiple
+        [placeholder]="'Users.UserListFilter.AllRoles' | translate"
+      >
+        <mat-option *ngFor="let role of roleEnum" [value]="role">
+          {{ "Users.UserListFilter.Role" | translate }}
+          {{ "Users.UserRoleEnum." + role | translate }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div>
+      <button
+        mat-flat-button
+        class="btn-filter font-normal"
+        color="accent"
+        type="submit"
+      >
+        {{ "Users.UserListFilter.SubmitButton" | translate }}
+      </button>
+    </div>
+  </form>
+  <div class="text-white mt-9">
+    {{ "Users.UserListFilter.Results" | translate : { results: results } }}
+  </div>
+</div>
+

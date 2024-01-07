@@ -1,0 +1,102 @@
+{
+  "Menu": {
+    "Item": {
+      "Header": "Panel administracyjny",
+      "Users": "Użytkownicy",
+      "AddNewUser": "Dodaj nowego użytkownika"
+    },
+    "ContentHeader": {
+      "Users": "Lista użytkowników",
+      "AddUser": "Dodaj nowego użytkownika",
+      "EditUser": "Edytuj użytkownika"
+    }
+  },
+  "Users": {
+    "UserForm": {
+      "ID": "Unikalny identyfikator użytkownika (ID)",
+      "FirstName": "Imię użytkownika",
+      "LastName": "Nazwisko użytkownika",
+      "Role": "Rola użytkownika",
+      "Status": "Status użytkownika",
+
+      "AddUser": {
+        "SuccessMessage": "Pomyślnie dodano użytkownika {{name}}",
+        "ErrorMessage": "Dodawanie użytkownika nie powiodło się!"
+      },
+      "EditUser": {
+        "SuccessMessage": "Pomyślnie edytowano użytkownika o ID: {{id}}",
+        "ErrorMessage": "Edytowanie użytkownika nie powiodło się!"
+      },
+
+      "Validation": {
+        "ID": {
+          "Required": "ID użytkownika jest obowiązkowe",
+          "Pattern": "ID musi być liczbą dodatnią i całkowitą"
+        },
+        "FirstName": {
+          "Required": "Imię użytkownika jest obowiązkowe",
+          "MaxLength": "Imię użytkownika nie może być dłuższe niż 50 znaków"
+        },
+        "LastName": {
+          "MaxLength": "Nazwisko użytkownika nie może być dłuższe niż 50 znaków"
+        },
+        "Role": {
+          "Required": "Rola użytkownika jest obowiązkowa"
+        }
+      },
+      "SubmitButton": {
+        "AddUser": "Dodaj użytkownika",
+        "EditUser": "Edytuj użytkownika"
+      }
+    },
+    "DeleteUser": {
+      "Title": "Usuwanie użytkownika",
+      "Description": "Czy na pewno chcesz usunąć użytkownika o nazwie {{name}}?",
+      "SubmitButton": "Usuń",
+      "CancelButton": "Anuluj",
+      "SuccessMessage": "Pomyślnie usunięto użytkownika {{name}}",
+      "ErrorMessage": "Usuwanie użytkownika nie powiodło się!"
+    },
+    "UserListFilter": {
+      "Placeholder": "Wprowadź nazwę lub klucz...",
+      "AllRoles": "Rola: Wszystkie",
+      "Role": "Rola:",
+      "SubmitButton": "Wyszukaj użytkownika",
+      "Results": "Wyniki: {{results}}"
+    },
+    "UserList": {
+      "Filter": {},
+      "Columns": {
+        "No": "Lp.",
+        "Id": "Id",
+        "FullName": "Imię i nazwisko",
+        "Role": "Rola",
+        "Status": "Status",
+        "Actions": "Akcje"
+      },
+      "ActionButtons": {
+        "Edit": "Edytuj",
+        "Delete": "Usuń"
+      }
+    },
+    "UserRoleEnum": {
+      "admin": "Administrator",
+      "user": "Użytkownik",
+      "operator": "Operator"
+    },
+    "UserStatusEnum": {
+      "active": "Aktywny",
+      "inactive": "Nieaktywny"
+    },
+    "MessageActionButton": "Ok!"
+  },
+  "Paginator": {
+    "RangeFromZero": "0 z {{length}}",
+    "Range": "{{startIndex}} - {{endIndex}} z {{length}}",
+    "ItemsPerPageLabel": "Elementów na stronę",
+    "NextPageLabel": "Następna strona",
+    "PreviousPageLabel": "Poprzednia strona",
+    "FirstPageLabel": "Pierwsza strona",
+    "LastPageLabel": "Ostatnia strona"
+  }
+}

@@ -1,0 +1,22 @@
+.header {
+  height: 75px;
+}
+
+.menu {
+  filter: brightness(0);
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+
+.header__divider {
+  width: 1px;
+  height: 40px;
+  background-color: #707070;
+}
+
+@media (max-width: 1280px), (max-height: 525px) {
+  .header {
+    height: 55px;
+  }
+}

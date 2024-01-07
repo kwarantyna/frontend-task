@@ -1,0 +1,26 @@
+<mat-nav-list>
+  <a
+    mat-list-item
+    class="sidenav__item"
+    [routerLink]="['users/user-list']"
+    routerLinkActive="active-link"
+  >
+    <img src="/assets/icons/list.svg" class="mr-3.5 relative top-0.5" />
+    <span class="item-name">
+      {{ "Menu.Item.Users" | translate }}
+    </span>
+  </a>
+  <a
+    mat-list-item
+    class="sidenav__item"
+    [routerLink]="['users/add-user']"
+    routerLinkActive="active-link"
+  >
+    <img src="/assets/icons/add-user.svg" class="mr-3.5 relative top-1" />
+
+    <span class="item-name">
+      {{ "Menu.Item.AddNewUser" | translate }}
+    </span>
+  </a>
+</mat-nav-list>
+

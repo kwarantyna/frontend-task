@@ -1,0 +1,109 @@
+@mixin table {
+  .mdc-data-table__header-row.mat-mdc-header-row {
+    color: #5d747d;
+  }
+
+  .mdc-data-table__header-cell.mat-mdc-header-cell {
+    border-bottom: 3px solid var(--color-accent500);
+  }
+
+  .mat-mdc-cell.mdc-data-table__cell {
+    color: var(--color-primary800);
+
+    &.mat-column-status {
+      font-size: 12px;
+    }
+  }
+
+  .mat-sort-header-arrow {
+    opacity: 1 !important;
+  }
+
+  .mat-mdc-row:nth-child(odd) {
+    background-color: var(--color-accent50);
+
+    & .mat-mdc-cell {
+      border: none;
+    }
+  }
+
+  .mat-mdc-row:nth-child(even) .mat-mdc-cell {
+    border-bottom: 1px solid var(--color-primary50);
+  }
+}
+
+@mixin buttons {
+  .btn-edit.mat-mdc-button:not(:disabled),
+  .btn-submit.mat-mdc-button:not(:disabled) {
+    color: var(--color-accent500);
+  }
+
+  .btn-edit.mdc-button:hover,
+  .btn-submit.mdc-button:hover {
+    background-color: var(--color-accent50);
+  }
+
+  .btn-delete.mat-mdc-button:not(:disabled) {
+    color: var(--color-warn500);
+    margin-left: 8px;
+  }
+
+  .btn-delete.mdc-button:hover {
+    background-color: var(--color-warn50);
+  }
+}
+
+@mixin select-option {
+  .mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full,
+  .mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-full {
+    background: var(--color-accent500);
+  }
+
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled)
+    .mdc-list-item__primary-text {
+    color: var(--color-accent900) !important;
+  }
+
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+    .mdc-line-ripple::after {
+    border-bottom-color: #00aff0 !important;
+  }
+}
+
+@mixin select {
+  @include select-option();
+
+  .filter-select mat-select.mat-mdc-select {
+    font-size: 14px;
+  }
+
+  .filter-select .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    height: 35px;
+    border-radius: 5px;
+  }
+
+  .filter-select
+    .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+      .mdc-text-field--textarea
+    )
+    .mat-mdc-form-field-infix {
+    padding-top: 6px;
+  }
+
+  .filter-select .mat-mdc-select-placeholder {
+    color: var(--color-primary800);
+  }
+}
+
+@mixin filter {
+  @include select();
+
+  .btn-filter.mat-mdc-unelevated-button:not(:disabled) {
+    padding: 0 35px;
+    background-color: var(--color-accent500);
+  }
+
+  .btn-filter.mdc-button:hover {
+    background-color: var(--color-accent700);
+  }
+}

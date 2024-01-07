@@ -1,26 +1,28 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { MenuComponent } from './components/menu/menu.component';
-import { CustomMaterialModule } from './material.module';
-import { EnumPipe } from './pipes/enum.pipe';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
+import { LogoComponent } from "./components/logo/logo.component";
+import { CustomMaterialModule } from "./material.module";
 
 @NgModule({
-  declarations: [MenuComponent, EnumPipe],
   imports: [
     CommonModule,
     CustomMaterialModule,
     RouterModule,
     ReactiveFormsModule,
+    TranslateModule,
+    FormsModule,
   ],
   exports: [
     CommonModule,
-    MenuComponent,
     CustomMaterialModule,
     ReactiveFormsModule,
-
-    EnumPipe,
+    TranslateModule,
+    LogoComponent,
+    FormsModule,
   ],
+  declarations: [LogoComponent],
 })
 export class SharedModule {}

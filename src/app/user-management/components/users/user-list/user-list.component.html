@@ -1,50 +1,86 @@
-<div class="mat-elevation-z8">
+<div class="filter px-4 pb-6">
+  <app-user-filter
+    (onSearch)="filterUserData($event)"
+    [results]="filteredResults"
+  ></app-user-filter>
+</div>
+
+<div class="xl:px-3 overflow-auto">
   <table mat-table matSort [dataSource]="dataSource">
     <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef>Lp.</th>
+      <th mat-header-cell *matHeaderCellDef>
+        {{ "Users.UserList.Columns.No" | translate }}
+      </th>
       <td mat-cell *matCellDef="let element; let i = index">
         {{ paginator.pageSize * paginator.pageIndex + i + 1 }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "Users.UserList.Columns.Id" | translate }}
+      </th>
       <td mat-cell *matCellDef="let element">{{ element.id }}</td>
     </ng-container>
 
     <ng-container matColumnDef="fullName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Imię i nazwisko</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "Users.UserList.Columns.FullName" | translate }}
+      </th>
       <td mat-cell *matCellDef="let element">{{ element.fullName }}</td>
     </ng-container>
 
     <ng-container matColumnDef="role">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rola</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "Users.UserList.Columns.Role" | translate }}
+      </th>
       <td mat-cell *matCellDef="let element">
-        {{ element.role | enum : roleEnumLabel }}
+        {{ "Users.UserRoleEnum." + element.role | translate }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "Users.UserList.Columns.Status" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="flex items-center">
+          <div
+            class="status-dot"
+            [ngClass]="element.status === 'active' ? 'active' : 'inactive'"
+          ></div>
+          {{ "Users.UserStatusEnum." + element.status | translate }}
+        </div>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Akcje</th>
+      <th mat-header-cell *matHeaderCellDef>
+        {{ "Users.UserList.Columns.Actions" | translate }}
+      </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-raised-button class="btn-edit" (click)="editUser(element)">
-          Edytuj
+        <button
+          mat-button
+          class="btn-edit uppercase"
+          (click)="editUser(element)"
+        >
+          {{ "Users.UserList.ActionButtons.Edit" | translate }}
         </button>
         <button
-          mat-raised-button
-          color="warn"
-          class="btn-delete"
+          mat-button
+          class="btn-delete uppercase"
           (click)="deleteUser(element)"
         >
-          Usuń
+          {{ "Users.UserList.ActionButtons.Delete" | translate }}
         </button>
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+  <mat-paginator fixed [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
   </mat-paginator>
 </div>
+

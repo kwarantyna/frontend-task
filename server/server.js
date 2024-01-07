@@ -40,24 +40,25 @@ server.listen(3000, () => {
   console.log("JSON Server is running");
 });
 
-const invalidUserData = (user) => {
+const invalidUserData = user => {
   return (
     invalidId(user.id) ||
     invalidFullName(user.fullName) ||
-    invalidRole(user.role)
+    invalidRole(user.role) ||
+    invalidStatus(user.status)
   );
 };
 
-const invalidId = (id) => {
+const invalidId = id => {
   // verify if id is positive integer
   return !id || id < 1 || !Number.isInteger(id);
 };
 
-const existingId = (id) => {
+const existingId = id => {
   return !!router.db.get("users").find({ id }).value();
 };
 
-const invalidFullName = (fullName) => {
+const invalidFullName = fullName => {
   const names = fullName.split(" ");
   // if only one name, verify first name
   if (names.length === 1) {
@@ -76,18 +77,24 @@ const invalidFullName = (fullName) => {
   return true;
 };
 
-const invalidFirstName = (firstName) => {
+const invalidFirstName = firstName => {
   return !firstName || firstName.length > 50;
 };
 
-const invalidLastName = (lastName) => {
+const invalidLastName = lastName => {
   if (lastName) {
     return lastName.length > 50;
   }
   return false;
 };
 
-const invalidRole = (role) => {
+const invalidRole = role => {
   const validRoles = ["admin", "user", "operator"];
   return !role || !validRoles.includes(role);
 };
+
+const invalidStatus = status => {
+  const validStatuses = ["active", "inactive"];
+  return !status || !validStatuses.includes(status);
+};
+
